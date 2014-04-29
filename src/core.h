@@ -190,7 +190,9 @@ public:
     std::vector<CTxIn> vin;
     std::vector<CTxOut> vout;
     unsigned int nLockTime;
-
+    int inflationVote;
+    int miningVote;
+    
     CTransaction()
     {
         SetNull();
@@ -211,6 +213,8 @@ public:
         vin.clear();
         vout.clear();
         nLockTime = 0;
+        inflationVote = -1;
+        miningVote = -1;
     }
 
     bool IsNull() const
